@@ -22,4 +22,4 @@ The objective of a Student Management System (SMS) is to efficiently manage vari
 - **Quit**: This quits the program.
 
   ### Technology Used
-  -**C++**: The whole code is written in C++ language, all the functions are created using this language.
+  - **C++**: The whole code is written in C++ language, all the functions are created using this language.
