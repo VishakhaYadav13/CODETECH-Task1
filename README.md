@@ -1,8 +1,13 @@
 **Name:** VISHAKHA YADAV
+
 **Company:** CODETECH IT SOLUTIONS
+
 **ID:** CT04CPP2332
+
 **Domain:** C++ Language
+
 **Duration:** June to July 2024
+
 **Mentor:** SRAVANI GOUNI 
 
 
@@ -21,5 +26,5 @@ The objective of a Student Management System (SMS) is to efficiently manage vari
 - **Delete**: This will delete all the information.
 - **Quit**: This quits the program.
 
-  ### Technology Used
-  - **C++**: The whole code is written in C++ language, all the functions are created using this language.
+### Technology Used
+- **C++**: The whole code is written in C++ language, all the functions are created using this language.
