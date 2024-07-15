@@ -1,0 +1,179 @@
+#include<iostream>
+using namespace std;
+string Roll_No[30],Name[30],Class[30],Course[30],Mobile_No[30],Admission_year[30];
+//arrays for storing student's data
+int total = 0;//For storing all data
+void Enter()
+{
+    int ch = 0;
+    cout<<"How many students do you want to enter?"<<endl<<endl;
+    cin>>ch;
+    if(total==0){
+        total = ch+total;
+        for(int i=0;i<ch;i++){
+            cout<<"\nEnter the data of student "<<i+1<<endl;
+            cout<<"Enter Roll No. : "<<endl;
+            cin>>Roll_No[i];
+            cout<<"Enter Name : "<<endl;
+            cin>>Name[i];
+            cout<<"Enter class : "<<endl;
+            cin>>Class[i];
+            cout<<"Enter Course : "<<endl;
+            cin>>Course[i];
+            cout<<"Enter Mobile No. : "<<endl;
+            cin>>Mobile_No[i];
+            cout<<"Enter Admission Year : "<<endl;
+            cin>>Admission_year[i];
+        }
+    }
+    else{
+        for(int i=total;i<ch+total;i++){
+            //to store onward students data rather than storing double data()
+            cout<<"\nEnter the data of student "<<i+1<<endl;
+            cout<<"Enter Roll No. : ";
+            cin>>Roll_No[i];
+            cout<<"Enter Name : ";
+            cin>>Name[i];
+            cout<<"Enter Class : ";
+            cin>>Class[i];
+            cout<<"Enter Course : ";
+            cin>>Course[i];
+            cout<<"Enter Mobile No. : ";
+            cin>>Mobile_No[i];
+            cout<<"Enter Admission Year : ";
+            cin>>Admission_year[i];
+        }
+        total = ch+total;    
+    }
+}
+void Show(){
+    if(total==0){
+        cout<<"No Data is Entered."<<endl;
+    }
+    else{
+        for(int i=0;i<total;i++){
+            cout<<"\nData of student "<<i+1<<endl;
+            cout<<"Roll No. : "<<Roll_No[i]<<endl;
+            cout<<"Name : "<<Name[i]<<endl;
+            cout<<"Class : "<<Class[i]<<endl;
+            cout<<"Course : "<<Course[i]<<endl;
+            cout<<"Mobile No. : "<<Mobile_No[i]<<endl;
+            cout<<"Admission Year : "<<Admission_year[i]<<endl;
+        }
+    }
+}
+void Search(){
+    if(total==0){
+        cout<<"No Data is Entered."<<endl;
+    }
+    else{
+        string rollno;
+        cout<<"Enter the Roll No. of student : "<<endl;
+        cin>>rollno;
+        for(int i=0;i<total;i++){
+            if(rollno==Roll_No[i]){
+            cout<<"Roll No : "<<Roll_No[i]<<endl;
+            cout<<"Name : "<<Name[i]<<endl;
+            cout<<"Class : "<<Class[i]<<endl;
+            cout<<"Course : "<<Course[i]<<endl;
+            cout<<"Mobile No. : "<<Mobile_No[i]<<endl;
+            cout<<"Admission Year : "<<Admission_year[i]<<endl;
+            }
+        }
+    }
+}
+void Update(){
+    if(total==0){
+        cout<<"No data is entered."<<endl;
+    }
+    else{
+        string rollno;
+        cout<<"Enter the Roll No. of student which you want to update."<<endl;
+        cin>>rollno;
+        
+        for(int i=0;i<total;i++){
+            if(rollno==Roll_No[i]){
+                //show previou data
+               cout<<"\nPrevious Data : "<<endl<<endl;
+               cout<<"Data of Student "<<i+1<<endl;
+               cout<<"Roll No. : "<<Roll_No[i]<<endl;
+               cout<<"Name : "<<Name[i]<<endl;
+               cout<<"Class : "<<Class[i]<<endl;
+               cout<<"Course : "<<Course[i]<<endl;
+               cout<<"Mobile No. : "<<Mobile_No[i]<<endl;
+               cout<<"Admission Year : "<<Admission_year[i]<<endl;
+               
+               //Enter new data
+               cout<<"\nEnter new data "<<endl<<endl;
+               cout<<"Enter Roll No. : ";
+               cin>>Roll_No[i];
+               cout<<"Enter Name : ";
+               cin>>Name[i];
+               cout<<"Enter Class : ";
+               cin>>Class[i];
+               cout<<"Enter Course : ";
+               cin>>Course[i];
+               cout<<"Enter Mobile No. : ";
+               cin>>Mobile_No[i];
+               cout<<"Enter Admission Year : ";
+               cin>>Admission_year[i];
+
+            }
+        }
+    }
+}
+void Delete(){
+    if(total==0){
+        cout<<"No data is enterd yet"<<endl;
+    }
+    else{
+        int a;
+        cout<<"Are you sure to delete all data?"<<endl;
+        cout<<"Press 1 to delete all data."<<endl;
+        cin>>a;
+        if(a==1){
+            total = 0;
+            cout<<"All data is deleted!!"<<endl;
+        }
+        else{
+            cout<<"Please press 1 to delete all data"<<endl;
+        }
+    }
+}
+
+int main(){
+    int value;
+    while(true){
+        cout<<"\nPress 1 to Enter Data"<<endl<<endl;
+        cout<<"Press 2 to Show Data"<<endl<<endl;
+        cout<<"Press 3 to Search Data"<<endl<<endl;
+        cout<<"Press 4 to Update Data"<<endl<<endl;
+        cout<<"Press 5 to Delete Data"<<endl<<endl;
+        cout<<"press 6 to Quit"<<endl<<endl;
+        cin>>value;
+        switch (value)
+        {
+        case 1:
+            Enter();
+            break;
+        case 2:
+            Show();
+            break;
+        case 3:
+            Search();
+            break;
+        case 4:
+            Update();
+            break;
+        case 5:
+            Delete();
+            break;
+        case 6:
+            exit(0);
+            break;
+        default:
+        cout<<"Invalid input.";
+            break;
+        }
+    }
+}
